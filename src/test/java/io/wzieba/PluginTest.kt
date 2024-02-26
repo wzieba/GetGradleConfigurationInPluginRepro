@@ -31,6 +31,15 @@ class PluginTest {
         assertTrue(secondRun.output.contains("Configure on demand: false"))
     }
 
+    @Test
+    fun tasksAreUpdated() {
+        val firstRun = runner("help").build()
+        assertTrue(firstRun.output.contains("Task: help"))
+
+        val secondRun = runner("tasks").build()
+        assertTrue(secondRun.output.contains("Task: tasks"))
+    }
+
     private fun runner(vararg arguments: String): GradleRunner {
         val projectDir = File("build/functionalTest")
             .apply {
