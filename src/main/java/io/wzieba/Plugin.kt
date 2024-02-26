@@ -13,11 +13,9 @@ import org.gradle.api.flow.FlowScope
 import org.gradle.api.logging.Logger
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Input
-import org.gradle.build.event.BuildEventsListenerRegistry
 
 @ExperimentalTime
 class Plugin @Inject constructor(
-    private val registry: BuildEventsListenerRegistry,
     private val flowScope: FlowScope,
     private val flowProviders: FlowProviders,
 ) : Plugin<Project> {
