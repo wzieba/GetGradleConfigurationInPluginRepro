@@ -28,12 +28,6 @@ class Plugin @Inject constructor(
                 project.gradle.startParameter.isConfigureOnDemand,
                 project.gradle.startParameter.taskNames[0]
             )
-            project.logger.error(
-                "Max workers: ${project.gradle.startParameter.maxWorkerCount}"
-            )
-            project.logger.error(
-                "Configure on demand: ${project.gradle.startParameter.isConfigureOnDemand}"
-            )
         }
 
         flowScope.always(BuildFinishedFlowAction::class.java) { spec ->
