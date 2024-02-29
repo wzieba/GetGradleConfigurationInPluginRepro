@@ -31,6 +31,10 @@ class PluginTest {
         assertTrue(secondRun.output.contains("Configure on demand: false"))
     }
 
+    /**
+     * It passes, as "configuration cache entries are bound to the set of requested tasks,
+     * so if you request other tasks, configuration cache is not reused."
+     */
     @Test
     fun tasksAreUpdated() {
         val firstRun = runner("help").build()
